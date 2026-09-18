@@ -1,0 +1,3367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Portofolio fotografi profesional Dadang Mulyadi — Wedding, Prewedding, Wisuda, Produk, Event.">
+<meta name="author" content="Dadang Mulyadi">
+<title>Dadang Mulyadi — Photographer & Visual Storyteller</title>
+
+<!-- ============================================================
+     FONT & ICON CDN
+     ============================================================ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+/* ============================================================
+   1. RESET & GLOBAL VARIABLES
+   ============================================================ */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color Palette */
+    --primary:        #0f0f0f;
+    --primary-soft:   #1a1a1a;
+    --secondary:      #d4a548;
+    --secondary-dark: #b88a2e;
+    --accent:         #e85d3c;
+    --text:           #1c1c1c;
+    --text-soft:      #5a5a5a;
+    --text-muted:     #8a8a8a;
+    --light:          #f6f5f2;
+    --light-2:        #efece6;
+    --border:         #e2dfd8;
+    --white:          #ffffff;
+
+    /* Typography */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Layout */
+    --container:     1280px;
+    --container-wide: 1440px;
+    --radius-sm:     6px;
+    --radius:        12px;
+    --radius-lg:     20px;
+
+    /* Motion */
+    --ease:      cubic-bezier(0.25, 0.8, 0.25, 1);
+    --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+    --t-fast:    0.2s;
+    --t-base:    0.35s;
+    --t-slow:    0.7s;
+
+    /* Navbar height — dipakai untuk scroll-padding */
+    --nav-h: 84px;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--nav-h);
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.65;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.no-scroll { overflow: hidden; }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--primary);
+}
+
+p { color: var(--text-soft); }
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--t-base) var(--ease);
+}
+
+img { max-width: 100%; display: block; }
+
+ul, ol { list-style: none; }
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+input, textarea, select {
+    font-family: inherit;
+    font-size: 15px;
+}
+
+::selection {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--light); }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--secondary); }
+
+/* ============================================================
+   2. UTILITY CLASSES
+   ============================================================ */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 32px;
+    width: 100%;
+}
+
+.section { padding: 110px 0; position: relative; }
+.section--light { background: var(--light); }
+.section--dark { background: var(--primary); color: var(--white); }
+.section--dark h2, .section--dark h3 { color: var(--white); }
+.section--dark p { color: rgba(255,255,255,0.72); }
+
+.section-head {
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto 70px;
+}
+
+.section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 18px;
+}
+
+.section-eyebrow::before,
+.section-eyebrow::after {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--secondary);
+}
+
+.section-title {
+    font-size: clamp(30px, 4.5vw, 54px);
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.section-title em {
+    font-style: italic;
+    color: var(--secondary);
+    font-weight: 400;
+}
+
+.section-desc {
+    font-size: 16px;
+    line-height: 1.75;
+    color: var(--text-muted);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 34px;
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: all var(--t-base) var(--ease);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+}
+
+.btn i { transition: transform var(--t-base) var(--ease); }
+.btn:hover i { transform: translateX(5px); }
+
+.btn--primary {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+.btn--primary:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+}
+
+.btn--gold {
+    background: var(--secondary);
+    color: var(--white);
+    border-color: var(--secondary);
+}
+.btn--gold:hover {
+    background: transparent;
+    color: var(--secondary);
+}
+
+.btn--outline {
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+.btn--outline:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn--light {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255,255,255,0.4);
+}
+.btn--light:hover {
+    background: var(--white);
+    color: var(--primary);
+    border-color: var(--white);
+}
+
+/* ============================================================
+   3. PRELOADER
+   ============================================================ */
+#preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: opacity 0.8s var(--ease-out), visibility 0.8s;
+}
+
+#preloader.loaded {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-inner { text-align: center; color: var(--white); }
+
+.preloader-logo {
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 0.15em;
+    margin-bottom: 22px;
+    opacity: 0;
+    animation: preloadFade 1s var(--ease-out) 0.2s forwards;
+}
+
+.preloader-logo span { color: var(--secondary); }
+
+@keyframes preloadFade { to { opacity: 1; } }
+
+.preloader-bar {
+    width: 220px;
+    height: 2px;
+    background: rgba(255,255,255,0.15);
+    margin: 0 auto 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.preloader-bar::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -40%;
+    width: 40%;
+    height: 100%;
+    background: var(--secondary);
+    animation: preloadBar 1.4s ease-in-out infinite;
+}
+
+@keyframes preloadBar {
+    0%   { left: -40%; }
+    100% { left: 100%; }
+}
+
+.preloader-text {
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+}
+
+/* ============================================================
+   4. SCROLL PROGRESS BAR
+   ============================================================ */
+#scrollProgress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+    z-index: 9999;
+    transition: width 0.1s linear;
+}
+
+/* ============================================================
+   5. NAVBAR
+   ============================================================ */
+.navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 900;
+    padding: 22px 0;
+    background: transparent;
+    transition: all var(--t-base) var(--ease);
+}
+
+.navbar.scrolled {
+    padding: 12px 0;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.04);
+}
+
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.nav-brand {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    transition: color var(--t-base) var(--ease);
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.navbar.scrolled .nav-brand { color: var(--primary); }
+.nav-brand span { color: var(--secondary); }
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.nav-link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    position: relative;
+    padding: 6px 0;
+    transition: color var(--t-base) var(--ease);
+    white-space: nowrap;
+}
+
+.navbar.scrolled .nav-link { color: var(--text-soft); }
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--secondary);
+    transition: width var(--t-base) var(--ease);
+}
+
+.nav-link:hover, .nav-link.active { color: var(--secondary); }
+.nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+.nav-cta {
+    padding: 12px 24px !important;
+    font-size: 11px !important;
+}
+
+.navbar.scrolled .nav-cta.btn--light {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+.navbar.scrolled .nav-cta.btn--light:hover {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: var(--white);
+    transition: color var(--t-base) var(--ease);
+}
+
+.navbar.scrolled .nav-toggle { color: var(--primary); }
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    background: var(--primary);
+    z-index: 950;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--t-base) var(--ease), visibility var(--t-base);
+}
+
+.mobile-menu.open { opacity: 1; visibility: visible; }
+
+.mobile-menu a {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--white);
+    padding: 12px 30px;
+    transition: color var(--t-base) var(--ease);
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.mobile-menu.open a {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-menu.open a:nth-child(1) { transition: all 0.4s var(--ease-out) 0.10s; }
+.mobile-menu.open a:nth-child(2) { transition: all 0.4s var(--ease-out) 0.15s; }
+.mobile-menu.open a:nth-child(3) { transition: all 0.4s var(--ease-out) 0.20s; }
+.mobile-menu.open a:nth-child(4) { transition: all 0.4s var(--ease-out) 0.25s; }
+.mobile-menu.open a:nth-child(5) { transition: all 0.4s var(--ease-out) 0.30s; }
+.mobile-menu.open a:nth-child(6) { transition: all 0.4s var(--ease-out) 0.35s; }
+
+.mobile-menu a:hover { color: var(--secondary); }
+
+.mobile-menu-close {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 48px; height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    transition: all var(--t-base) var(--ease);
+}
+
+.mobile-menu-close:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* ============================================================
+   6. HERO — DESKTOP FIT ONE SCREEN
+   ============================================================ */
+
+/* 
+   Kunci utama: hero pakai min-height 100vh + min-height fallback,
+   konten dibungkus grid 2 kolom di desktop, dan semua font pakai
+   clamp() supaya tidak overflow di zoom-out.
+*/
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;   /* small viewport — aman untuk mobile browser */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--primary);
+    padding: calc(var(--nav-h) + 20px) 0 40px;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0.55;
+    animation: heroZoom 22s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes heroZoom {
+    from { transform: scale(1); }
+    to   { transform: scale(1.1); }
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+        linear-gradient(180deg, rgba(15,15,15,0.55) 0%, rgba(15,15,15,0.7) 55%, rgba(15,15,15,0.95) 100%),
+        radial-gradient(ellipse at 25% 35%, rgba(212,165,72,0.14), transparent 55%);
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: var(--container-wide);
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* 
+   Grid 2 kolom: kiri teks informatif, kanan highlight/quick info.
+   Di mobile jadi 1 kolom.
+*/
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.hero-content { color: var(--white); }
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: heroFade 1s var(--ease-out) 0.3s forwards;
+}
+
+.hero-eyebrow .dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--secondary);
+    animation: pulse 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1);   opacity: 1; }
+    50%      { transform: scale(1.5); opacity: 0.5; }
+}
+
+.hero-title {
+    /* clamp 3 nilai: min, ideal vw, max — supaya proporsional di semua zoom */
+    font-size: clamp(38px, 5.2vw, 82px);
+    font-weight: 900;
+    line-height: 1.02;
+    margin-bottom: 24px;
+    color: var(--white);
+    letter-spacing: -0.025em;
+    opacity: 0;
+    animation: heroFade 1.2s var(--ease-out) 0.5s forwards;
+}
+
+.hero-title em {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--secondary);
+    font-size: 0.85em;
+    margin-top: 6px;
+}
+
+.hero-desc {
+    font-size: clamp(15px, 1.15vw, 18px);
+    font-weight: 300;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.78);
+    max-width: 560px;
+    margin-bottom: 34px;
+    opacity: 0;
+    animation: heroFade 1.2s var(--ease-out) 0.7s forwards;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: heroFade 1.2s var(--ease-out) 0.9s forwards;
+}
+
+@keyframes heroFade {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 
+   KANAN: kartu quick info — "kata-kata informatif"
+   Menampilkan layanan unggulan + kontak cepat.
+*/
+.hero-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    color: var(--white);
+    opacity: 0;
+    animation: heroFade 1.2s var(--ease-out) 0.7s forwards;
+}
+
+.hero-card-title {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-weight: 700;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-card-title i { font-size: 13px; }
+
+.hero-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 24px;
+}
+
+.hero-card-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 14px;
+}
+
+.hero-card-list li:last-child { border-bottom: none; }
+
+.hero-card-list .label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+}
+
+.hero-card-list .label i {
+    width: 30px;
+    height: 30px;
+    background: rgba(212,165,72,0.15);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--secondary);
+    flex-shrink: 0;
+}
+
+.hero-card-list .value {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.hero-card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.hero-card-cta .price-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.hero-card-cta .price-value {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.hero-card-cta a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all var(--t-base) var(--ease);
+    flex-shrink: 0;
+}
+
+.hero-card-cta a:hover {
+    background: var(--white);
+    color: var(--primary);
+    transform: rotate(-45deg);
+}
+
+/* HERO STATS — 4 kolom di bawah */
+.hero-stats {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: var(--container-wide);
+    margin: 60px auto 0;
+    padding: 30px 32px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    opacity: 0;
+    animation: heroFade 1.2s var(--ease-out) 1.1s forwards;
+}
+
+.hero-stat { color: var(--white); text-align: left; }
+
+.hero-stat-num {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.2vw, 46px);
+    font-weight: 700;
+    color: var(--secondary);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.hero-stat-label {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    font-weight: 500;
+}
+
+/* Scroll Hint */
+.scroll-hint {
+    position: absolute;
+    bottom: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    color: rgba(255,255,255,0.5);
+    font-size: 10px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: heroFade 1.2s var(--ease-out) 1.5s forwards;
+}
+
+.scroll-hint i {
+    font-size: 13px;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(8px); }
+}
+
+/* ============================================================
+   7. MARQUEE STRIP
+   ============================================================ */
+.marquee {
+    background: var(--secondary);
+    padding: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 60px;
+    animation: marquee 32s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.marquee-item i { font-size: 13px; opacity: 0.5; }
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* ============================================================
+   8. ABOUT
+   ============================================================ */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-visual { position: relative; }
+
+.about-img-main {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.about-img-main img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s var(--ease);
+}
+
+.about-img-main:hover img { transform: scale(1.06); }
+
+.about-img-secondary {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 55%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border: 8px solid var(--white);
+    border-radius: var(--radius);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+}
+
+.about-img-secondary img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.about-badge {
+    position: absolute;
+    top: 30px;
+    left: -30px;
+    background: var(--secondary);
+    color: var(--white);
+    padding: 20px 26px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+    animation: floatY 4s ease-in-out infinite;
+}
+
+@keyframes floatY {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-12px); }
+}
+
+.about-badge .num {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+}
+
+.about-badge .label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.about-content h2 {
+    font-size: clamp(30px, 4vw, 50px);
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.about-content h2 em {
+    color: var(--secondary);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.about-lead {
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 22px;
+    font-weight: 400;
+}
+
+.about-content p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.about-signature {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-style: italic;
+    color: var(--primary);
+    margin: 30px 0 10px;
+}
+
+.about-role {
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 32px;
+}
+
+.about-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.about-socials a {
+    width: 44px; height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-soft);
+    font-size: 15px;
+    transition: all var(--t-base) var(--ease);
+}
+
+.about-socials a:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* Skill Bars */
+.skills { margin-top: 40px; }
+.skill { margin-bottom: 20px; }
+
+.skill-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+}
+
+.skill-bar {
+    height: 4px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary), var(--accent));
+    width: 0;
+    transition: width 1.4s var(--ease-out);
+    border-radius: 4px;
+}
+
+/* ============================================================
+   9. SERVICES
+   ============================================================ */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.service-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 44px 34px;
+    position: relative;
+    transition: all var(--t-base) var(--ease);
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--secondary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--t-base) var(--ease);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+    border-color: transparent;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+
+.service-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--light);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: var(--secondary);
+    margin-bottom: 26px;
+    transition: all var(--t-base) var(--ease);
+}
+
+.service-card:hover .service-icon {
+    background: var(--secondary);
+    color: var(--white);
+    transform: rotate(-6deg) scale(1.05);
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+}
+
+.service-card .price {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-weight: 700;
+    padding: 6px 14px;
+    background: rgba(212,165,72,0.1);
+    border-radius: 20px;
+}
+
+/* ============================================================
+   10. PORTFOLIO
+   ============================================================ */
+.portfolio-filter {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    transition: all var(--t-base) var(--ease);
+}
+
+.filter-btn:hover {
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--white);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--light);
+    border-radius: var(--radius-sm);
+}
+
+.portfolio-item.hide { display: none; }
+
+.portfolio-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 1s var(--ease);
+}
+
+.portfolio-item:hover img { transform: scale(1.1); }
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(15,15,15,0.9), rgba(15,15,15,0.2) 55%, transparent);
+    opacity: 0;
+    transition: opacity var(--t-base) var(--ease);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    color: var(--white);
+}
+
+.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+.portfolio-overlay .cat {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 8px;
+    transform: translateY(15px);
+    transition: transform var(--t-base) var(--ease) 0.05s;
+}
+
+.portfolio-overlay h4 {
+    font-size: 22px;
+    color: var(--white);
+    transform: translateY(15px);
+    transition: transform var(--t-base) var(--ease) 0.1s;
+}
+
+.portfolio-overlay .view-icon {
+    position: absolute;
+    top: 24px; right: 24px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 14px;
+    transform: scale(0) rotate(-90deg);
+    transition: transform var(--t-base) var(--ease) 0.15s;
+}
+
+.portfolio-item:hover .portfolio-overlay .cat,
+.portfolio-item:hover .portfolio-overlay h4 { transform: translateY(0); }
+
+.portfolio-item:hover .portfolio-overlay .view-icon {
+    transform: scale(1) rotate(0deg);
+}
+
+/* ============================================================
+   11. COUNTERS
+   ============================================================ */
+.counters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.counter-item { color: var(--white); }
+
+.counter-num {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 5vw, 60px);
+    font-weight: 700;
+    color: var(--secondary);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.counter-label {
+    font-size: 12px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    font-weight: 500;
+}
+
+/* ============================================================
+   12. TESTIMONIALS
+   ============================================================ */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.testimonial {
+    background: var(--white);
+    border: 1px solid var(--border);
+    padding: 40px 34px;
+    position: relative;
+    transition: all var(--t-base) var(--ease);
+    border-radius: var(--radius);
+}
+
+.testimonial:hover {
+    box-shadow: 0 24px 60px rgba(0,0,0,0.14);
+    transform: translateY(-6px);
+    border-color: transparent;
+}
+
+.testimonial-quote {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-family: var(--font-display);
+    font-size: 90px;
+    line-height: 1;
+    color: var(--secondary);
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+.testimonial-stars {
+    color: var(--secondary);
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.testimonial-text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 26px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.testimonial-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.testimonial-avatar img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-info strong {
+    display: block;
+    font-size: 15px;
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 2px;
+    font-family: var(--font-body);
+}
+
+.testimonial-info span {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* ============================================================
+   13. PROCESS
+   ============================================================ */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 30px;
+    position: relative;
+}
+
+.process-step {
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+.process-step-num {
+    font-family: var(--font-display);
+    font-size: 80px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--secondary);
+    opacity: 0.15;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.process-icon {
+    width: 72px;
+    height: 72px;
+    background: var(--white);
+    border: 2px solid var(--secondary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: var(--secondary);
+    margin: 20px auto 24px;
+    position: relative;
+    z-index: 1;
+    transition: all var(--t-base) var(--ease);
+}
+
+.process-step:hover .process-icon {
+    background: var(--secondary);
+    color: var(--white);
+    transform: rotate(360deg);
+}
+
+.process-step h4 { font-size: 20px; margin-bottom: 12px; }
+.process-step p { font-size: 14px; line-height: 1.7; }
+
+/* ============================================================
+   14. CTA BANNER
+   ============================================================ */
+.cta-banner {
+    position: relative;
+    padding: 100px 0;
+    background: var(--primary);
+    overflow: hidden;
+    text-align: center;
+}
+
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600&q=80') center/cover;
+    opacity: 0.22;
+}
+
+.cta-banner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15,15,15,0.85), rgba(15,15,15,0.6));
+}
+
+.cta-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--white);
+}
+
+.cta-content h2 {
+    font-size: clamp(30px, 4.5vw, 54px);
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.cta-content h2 em {
+    color: var(--secondary);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.cta-content p {
+    font-size: 17px;
+    color: rgba(255,255,255,0.72);
+    margin-bottom: 36px;
+    line-height: 1.7;
+}
+
+/* ============================================================
+   15. CONTACT / BOOKING FORM
+   ============================================================ */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact-info h3 em {
+    color: var(--secondary);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.contact-info > p {
+    font-size: 15.5px;
+    line-height: 1.8;
+    margin-bottom: 36px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.contact-item-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    background: var(--light);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: var(--secondary);
+    transition: all var(--t-base) var(--ease);
+}
+
+.contact-item:hover .contact-item-icon {
+    background: var(--secondary);
+    color: var(--white);
+}
+
+.contact-item-body { padding-top: 4px; }
+
+.contact-item-label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.contact-item-value {
+    font-size: 15.5px;
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 44px 40px;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group { margin-bottom: 22px; }
+
+.form-group label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.form-group label .req { color: var(--accent); }
+
+.form-control {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    background: var(--light);
+    border-radius: var(--radius-sm);
+    color: var(--text);
+    font-size: 15px;
+    transition: all var(--t-base) var(--ease);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--secondary);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(212,165,72,0.1);
+}
+
+textarea.form-control { min-height: 130px; resize: vertical; }
+
+.form-submit {
+    width: 100%;
+    padding: 18px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    transition: all var(--t-base) var(--ease);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.form-submit:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(212,165,72,0.35);
+}
+
+/* ============================================================
+   16. FAQ
+   ============================================================ */
+.faq-list { max-width: 860px; margin: 0 auto; }
+
+.faq-item { border-bottom: 1px solid var(--border); }
+
+.faq-question {
+    width: 100%;
+    padding: 26px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    text-align: left;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--primary);
+    transition: color var(--t-base) var(--ease);
+}
+
+.faq-question:hover { color: var(--secondary); }
+
+.faq-icon {
+    width: 36px; height: 36px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--secondary);
+    transition: all var(--t-base) var(--ease);
+}
+
+.faq-item.open .faq-icon {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--t-base) var(--ease);
+}
+
+.faq-answer p { padding: 0 60px 26px 0; font-size: 15px; line-height: 1.8; }
+
+/* ============================================================
+   17. INSTAGRAM GRID
+   ============================================================ */
+.ig-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+}
+
+.ig-item {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.ig-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform var(--t-base) var(--ease);
+}
+
+.ig-item:hover img { transform: scale(1.1); }
+
+.ig-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15,15,15,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 24px;
+    opacity: 0;
+    transition: opacity var(--t-base) var(--ease);
+}
+
+.ig-item:hover .ig-overlay { opacity: 1; }
+
+/* ============================================================
+   18. FOOTER
+   ============================================================ */
+.footer {
+    background: var(--primary);
+    color: var(--white);
+    padding: 90px 0 30px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 1.4fr;
+    gap: 50px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-brand h3 {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin-bottom: 18px;
+}
+
+.footer-brand h3 span { color: var(--secondary); }
+
+.footer-brand p {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 24px;
+    max-width: 340px;
+}
+
+.footer-col h4 {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 24px;
+}
+
+.footer-col ul li { margin-bottom: 12px; }
+
+.footer-col ul a {
+    color: rgba(255,255,255,0.6);
+    font-size: 14.5px;
+    transition: all var(--t-base) var(--ease);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-col ul a:hover {
+    color: var(--secondary);
+    transform: translateX(4px);
+}
+
+.footer-newsletter p {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+
+.newsletter-form {
+    display: flex;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 14px 16px;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 14px;
+    min-width: 0;
+}
+
+.newsletter-form input::placeholder { color: rgba(255,255,255,0.35); }
+.newsletter-form input:focus { outline: none; }
+
+.newsletter-form button {
+    padding: 0 20px;
+    background: var(--secondary);
+    color: var(--white);
+    font-size: 14px;
+    transition: background var(--t-base) var(--ease);
+    flex-shrink: 0;
+}
+
+.newsletter-form button:hover { background: var(--secondary-dark); }
+
+.footer-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.footer-socials a {
+    width: 42px; height: 42px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    transition: all var(--t-base) var(--ease);
+}
+
+.footer-socials a:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--white);
+    transform: translateY(-4px);
+}
+
+.footer-bottom {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+}
+
+.footer-bottom a { color: rgba(255,255,255,0.6); }
+.footer-bottom a:hover { color: var(--secondary); }
+
+/* ============================================================
+   19. FLOATING BUTTONS
+   ============================================================ */
+#backToTop,
+.whatsapp-float {
+    position: fixed;
+    right: 24px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    z-index: 800;
+    cursor: pointer;
+    transition: all var(--t-base) var(--ease);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+#backToTop {
+    bottom: 90px;
+    background: var(--primary);
+    color: var(--white);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#backToTop:hover {
+    background: var(--secondary);
+    transform: translateY(-4px);
+}
+
+.whatsapp-float {
+    bottom: 24px;
+    background: #25D366;
+    color: var(--white);
+    animation: waPulse 2.4s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    animation-play-state: paused;
+}
+
+@keyframes waPulse {
+    0%, 100% { box-shadow: 0 8px 24px rgba(37,211,102,0.3), 0 0 0 0 rgba(37,211,102,0.5); }
+    50%      { box-shadow: 0 8px 24px rgba(37,211,102,0.4), 0 0 0 14px rgba(37,211,102,0); }
+}
+
+/* ============================================================
+   20. SCROLL REVEAL
+   ============================================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left  { transform: translateX(-50px); }
+.reveal-right { transform: translateX(50px); }
+.reveal-scale { transform: scale(0.92); }
+
+.reveal-left.visible,
+.reveal-right.visible,
+.reveal-scale.visible {
+    transform: translate(0) scale(1);
+}
+
+.stagger > * {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+.stagger.visible > * { opacity: 1; transform: translateY(0); }
+
+.stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.stagger.visible > *:nth-child(2) { transition-delay: 0.15s; }
+.stagger.visible > *:nth-child(3) { transition-delay: 0.25s; }
+.stagger.visible > *:nth-child(4) { transition-delay: 0.35s; }
+.stagger.visible > *:nth-child(5) { transition-delay: 0.45s; }
+.stagger.visible > *:nth-child(6) { transition-delay: 0.55s; }
+
+/* ============================================================
+   21. RESPONSIVE — DESKTOP → TABLET → MOBILE
+   ============================================================ */
+
+/* ---- LAPTOP BESAR (>1440px): hero tetap 1 layar ---- */
+@media (min-width: 1441px) {
+    .hero-inner { max-width: 1440px; }
+    .hero-stats { max-width: 1440px; }
+}
+
+/* ---- LAPTOP (1101px - 1280px) ---- */
+@media (max-width: 1280px) {
+    .container { padding: 0 28px; }
+    .hero-inner { padding: 0 28px; }
+    .hero-stats { padding: 30px 28px 0; }
+    .nav-menu { gap: 28px; }
+    .nav-link { font-size: 11px; letter-spacing: 0.14em; }
+}
+
+/* ---- TABLET LANDSCAPE (961px - 1100px) ---- */
+@media (max-width: 1100px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-card { max-width: 520px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .ig-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---- TABLET PORTRAIT (769px - 960px) ---- */
+@media (max-width: 960px) {
+    :root { --nav-h: 76px; }
+    .section { padding: 80px 0; }
+    .about-grid { grid-template-columns: 1fr; gap: 100px; }
+    .about-img-secondary { right: 10px; bottom: -50px; }
+    .about-badge { left: 10px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero { padding: calc(var(--nav-h) + 30px) 0 40px; }
+    .hero-stats { gap: 24px; }
+}
+
+/* ---- MOBILE (<= 768px): layout benar-benar berbeda ---- */
+@media (max-width: 768px) {
+    :root { --nav-h: 68px; }
+
+    .container { padding: 0 20px; }
+    .section { padding: 64px 0; }
+    .section-head { margin-bottom: 48px; }
+
+    /* Navbar: hamburger */
+    .nav-menu { display: none; }
+    .nav-toggle { display: flex; }
+
+    /* HERO MOBILE — susun vertikal, tidak full-height */
+    .hero {
+        min-height: 100vh;
+        min-height: 100svh;
+        padding: calc(var(--nav-h) + 24px) 0 32px;
+        justify-content: flex-start;
+    }
+
+    .hero-inner { padding: 0 20px; }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .hero-eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.32em;
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: clamp(34px, 9vw, 48px);
+        line-height: 1.05;
+        margin-bottom: 18px;
+    }
+
+    .hero-title em {
+        font-size: 0.8em;
+        margin-top: 4px;
+    }
+
+    .hero-desc {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        justify-content: center;
+        width: 100%;
+        padding: 15px 24px;
+    }
+
+    /* Kartu info mobile — lebih compact */
+    .hero-card {
+        padding: 26px 22px;
+        border-radius: var(--radius);
+    }
+
+    .hero-card-title { font-size: 10px; margin-bottom: 14px; }
+
+    .hero-card-list li {
+        padding: 10px 0;
+        font-size: 13px;
+    }
+
+    .hero-card-list .label i {
+        width: 26px; height: 26px;
+        font-size: 11px;
+    }
+
+    .hero-card-list .value { font-size: 15px; }
+
+    .hero-card-cta .price-value { font-size: 19px; }
+    .hero-card-cta a { width: 42px; height: 42px; font-size: 14px; }
+
+    /* Stats mobile — 2 kolom */
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 16px;
+        margin-top: 34px;
+        padding: 24px 20px 0;
+    }
+
+    .hero-stat { text-align: left; }
+    .hero-stat-num { font-size: 30px; }
+    .hero-stat-label { font-size: 10px; letter-spacing: 0.18em; }
+
+    .scroll-hint { display: none; }
+
+    /* Marquee lebih kecil */
+    .marquee { padding: 16px 0; }
+    .marquee-track { gap: 40px; }
+    .marquee-item { gap: 40px; font-size: 18px; }
+    .marquee-item i { font-size: 11px; }
+
+    /* About */
+    .about-badge {
+        padding: 14px 18px;
+        left: 8px;
+        top: 16px;
+    }
+    .about-badge .num { font-size: 28px; }
+    .about-badge .label { font-size: 9px; }
+
+    .about-img-secondary {
+        width: 58%;
+        right: 0;
+        bottom: -30px;
+        border-width: 6px;
+    }
+
+    /* Form */
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .contact-form { padding: 28px 22px; }
+
+    /* Footer */
+    .footer { padding: 64px 0 24px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 36px; padding-bottom: 40px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+
+    /* Portfolio */
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .portfolio-overlay { padding: 16px; }
+    .portfolio-overlay h4 { font-size: 15px; }
+    .portfolio-overlay .cat { font-size: 10px; margin-bottom: 4px; }
+    .portfolio-overlay .view-icon {
+        width: 34px; height: 34px;
+        top: 12px; right: 12px;
+        font-size: 12px;
+    }
+
+    /* IG grid */
+    .ig-grid { grid-template-columns: repeat(3, 1fr); }
+
+    /* Counters */
+    .counters { gap: 24px; }
+    .counter-num { font-size: 40px; }
+
+    /* Services */
+    .services-grid { grid-template-columns: 1fr; gap: 16px; }
+    .service-card { padding: 32px 26px; }
+
+    /* Testimonials */
+    .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+    .testimonial { padding: 30px 24px; }
+    .testimonial-quote { font-size: 60px; top: 12px; right: 18px; }
+    .testimonial-text { font-size: 15px; }
+
+    /* FAQ */
+    .faq-question { font-size: 16px; padding: 20px 0; }
+    .faq-answer p { padding: 0 0 20px 0; font-size: 14px; }
+
+    /* Floating buttons */
+    #backToTop, .whatsapp-float {
+        width: 46px;
+        height: 46px;
+        font-size: 16px;
+        right: 16px;
+    }
+    #backToTop { bottom: 78px; }
+    .whatsapp-float { bottom: 16px; }
+}
+
+/* ---- MOBILE KECIL (<= 480px) ---- */
+@media (max-width: 480px) {
+    .hero-title { font-size: 32px; }
+    .hero-title em { font-size: 0.75em; }
+    .hero-desc { font-size: 14px; }
+    .hero-eyebrow { font-size: 9px; letter-spacing: 0.24em; gap: 10px; }
+    .hero-eyebrow .dot { width: 5px; height: 5px; }
+
+    .hero-card { padding: 22px 18px; }
+    .hero-card-list li { font-size: 12.5px; padding: 9px 0; }
+    .hero-card-list .label i { width: 24px; height: 24px; font-size: 10px; }
+    .hero-card-list .value { font-size: 14px; }
+
+    .btn { font-size: 11px; letter-spacing: 0.14em; padding: 14px 20px; }
+
+    .ig-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .portfolio-grid { grid-template-columns: 1fr; }
+
+    .section-title { font-size: 26px; }
+
+    .hero-stats { grid-template-columns: 1fr 1fr; gap: 18px 12px; }
+    .hero-stat-num { font-size: 26px; }
+    .hero-stat-label { font-size: 9px; letter-spacing: 0.14em; }
+}
+
+/* ---- MOBILE LANDSCAPE (max-height 500px) ---- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 90px 0 30px;
+    }
+    .hero-stats { margin-top: 30px; padding-top: 20px; }
+    .scroll-hint { display: none; }
+    .hero-card { padding: 22px 20px; }
+}
+
+/* ============================================================
+   22. ACCESSIBILITY
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+    <div class="preloader-inner">
+        <div class="preloader-logo">DADANG<span>.</span></div>
+        <div class="preloader-bar"></div>
+        <div class="preloader-text">Loading Portfolio</div>
+    </div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scrollProgress"></div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+        <a href="#home" class="nav-brand">DADANG<span>.</span></a>
+
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#testimonials" class="nav-link">Testimoni</a></li>
+            <li><a href="#contact" class="nav-link">Kontak</a></li>
+        </ul>
+
+        <a href="#contact" class="btn btn--light nav-cta">Book Now</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" id="mobileClose" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Testimoni</a>
+    <a href="#contact">Kontak</a>
+</div>
+
+<!-- ============================================================
+     HERO — 1 LAYAR PENUH DI DESKTOP
+     ============================================================ -->
+<section class="hero" id="home">
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=1920&q=80');"></div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-inner">
+        <div class="hero-grid">
+            <!-- KIRI: teks informatif utama -->
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span class="dot"></span>
+                    Photographer &amp; Visual Storyteller
+                </div>
+
+                <h1 class="hero-title">
+                    Dadang Mulyadi
+                    <em>Mengabadikan Momen</em>
+                </h1>
+
+                <p class="hero-desc">
+                    Lebih dari satu dekade menangkap cerita, emosi, dan momen berharga
+                    melalui lensa — dari pernikahan sakral, potret personal, hingga
+                    fotografi komersial yang tajam. Berbasis di Jakarta, melayani seluruh Indonesia.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#portfolio" class="btn btn--gold">
+                        Lihat Portfolio <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn--light">
+                        <i class="fa-solid fa-calendar-check"></i> Booking Sesi
+                    </a>
+                </div>
+            </div>
+
+            <!-- KANAN: kartu quick info — kata-kata informatif -->
+            <aside class="hero-card">
+                <div class="hero-card-title">
+                    <i class="fa-solid fa-bolt"></i>
+                    Info Cepat
+                </div>
+
+                <ul class="hero-card-list">
+                    <li>
+                        <span class="label"><i class="fa-solid fa-camera"></i> Spesialisasi</span>
+                        <span class="value">Wedding</span>
+                    </li>
+                    <li>
+                        <span class="label"><i class="fa-solid fa-location-dot"></i> Basis</span>
+                        <span class="value">Jakarta</span>
+                    </li>
+                    <li>
+                        <span class="label"><i class="fa-solid fa-clock"></i> Respon</span>
+                        <span class="value">&lt; 24 Jam</span>
+                    </li>
+                    <li>
+                        <span class="label"><i class="fa-solid fa-award"></i> Pengalaman</span>
+                        <span class="value">12 Tahun</span>
+                    </li>
+                </ul>
+
+                <div class="hero-card-cta">
+                    <div>
+                        <span class="price-label">Paket Mulai</span>
+                        <span class="price-value">Rp 500.000</span>
+                    </div>
+                    <a href="#contact" aria-label="Booking">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </aside>
+        </div>
+
+        <!-- HERO STATS — 4 kolom -->
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="hero-stat-num" data-count="12">0</div>
+                <div class="hero-stat-label">Tahun Pengalaman</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num" data-count="850">0</div>
+                <div class="hero-stat-label">Sesi Foto</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num" data-count="420">0</div>
+                <div class="hero-stat-label">Klien Puas</div>
+            </div>
+            <div class="hero-stat">
+                <div class="hero-stat-num" data-count="18">0</div>
+                <div class="hero-stat-label">Penghargaan</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-hint">
+        <span>Scroll</span>
+        <i class="fa-solid fa-arrow-down"></i>
+    </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+    <div class="marquee-track">
+        <div class="marquee-item">
+            <span>Wedding</span><i class="fa-solid fa-star"></i>
+            <span>Prewedding</span><i class="fa-solid fa-star"></i>
+            <span>Wisuda</span><i class="fa-solid fa-star"></i>
+            <span>Produk</span><i class="fa-solid fa-star"></i>
+            <span>Event</span><i class="fa-solid fa-star"></i>
+            <span>Portrait</span><i class="fa-solid fa-star"></i>
+        </div>
+        <div class="marquee-item" aria-hidden="true">
+            <span>Wedding</span><i class="fa-solid fa-star"></i>
+            <span>Prewedding</span><i class="fa-solid fa-star"></i>
+            <span>Wisuda</span><i class="fa-solid fa-star"></i>
+            <span>Produk</span><i class="fa-solid fa-star"></i>
+            <span>Event</span><i class="fa-solid fa-star"></i>
+            <span>Portrait</span><i class="fa-solid fa-star"></i>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-visual reveal reveal-left">
+                <div class="about-img-main">
+                    <img src="https://images.unsplash.com/photo-1552168324-d612d77725e3?w=800&q=80" alt="Dadang Mulyadi">
+                </div>
+                <div class="about-img-secondary">
+                    <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&q=80" alt="Behind the scene">
+                </div>
+                <div class="about-badge">
+                    <span class="num">12+</span>
+                    <span class="label">Years Exp</span>
+                </div>
+            </div>
+
+            <div class="about-content reveal reveal-right">
+                <div class="section-eyebrow" style="margin-bottom: 18px;">Tentang Saya</div>
+                <h2>Cerita di Balik <em>Setiap Frame</em></h2>
+
+                <p class="about-lead">
+                    Nama saya Dadang Mulyadi, seorang fotografer profesional yang berbasis di Jakarta
+                    dengan spesialisasi di bidang wedding, portrait, dan commercial photography.
+                </p>
+
+                <p>
+                    Perjalanan saya dimulai sejak 2013 ketika kamera pertama jatuh ke tangan saya.
+                    Sejak saat itu, saya percaya bahwa fotografi bukan sekadar menekan tombol shutter —
+                    ini adalah seni menyimpan cerita, emosi, dan momen yang tak akan pernah terulang.
+                </p>
+
+                <p>
+                    Setiap sesi foto bagi saya adalah kolaborasi. Saya mendengarkan, mengamati, dan
+                    menangkap momen paling jujur. Hasilnya bukan sekadar foto indah, tapi kenangan
+                    yang bisa Anda ceritakan pada generasi berikutnya.
+                </p>
+
+                <div class="about-signature">Dadang Mulyadi</div>
+                <div class="about-role">Founder &amp; Lead Photographer</div>
+
+                <div class="skills">
+                    <div class="skill">
+                        <div class="skill-head"><span>Wedding Photography</span><span>96%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" data-width="96"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-head"><span>Portrait &amp; Fashion</span><span>92%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" data-width="92"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-head"><span>Commercial &amp; Product</span><span>88%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" data-width="88"></div></div>
+                    </div>
+                    <div class="skill">
+                        <div class="skill-head"><span>Post Processing</span><span>94%</span></div>
+                        <div class="skill-bar"><div class="skill-bar-fill" data-width="94"></div></div>
+                    </div>
+                </div>
+
+                <div class="about-socials">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section--light" id="services">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="section-eyebrow">Layanan</div>
+            <h2 class="section-title">Apa Yang <em>Saya Tawarkan</em></h2>
+            <p class="section-desc">
+                Beragam layanan fotografi profesional yang disesuaikan dengan kebutuhan
+                dan cerita unik Anda.
+            </p>
+        </div>
+
+        <div class="services-grid stagger">
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+                <h3>Wedding Photography</h3>
+                <p>
+                    Dokumentasi lengkap hari pernikahan Anda — dari persiapan, akad,
+                    resepsi, hingga candid moments yang paling jujur.
+                </p>
+                <span class="price">Mulai Rp 5.500.000</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-camera-retro"></i></div>
+                <h3>Prewedding</h3>
+                <p>
+                    Sesi romantis sebelum hari bahagia dengan konsep yang
+                    disesuaikan dengan kepribadian Anda berdua.
+                </p>
+                <span class="price">Mulai Rp 2.500.000</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Wisuda</h3>
+                <p>
+                    Abadikan momen kelulusan penuh kebanggaan — solo, keluarga,
+                    atau bersama sahabat seperjuangan.
+                </p>
+                <span class="price">Mulai Rp 750.000</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-cube"></i></div>
+                <h3>Product Photography</h3>
+                <p>
+                    Foto produk komersial berkualitas untuk e-commerce, katalog,
+                    dan kebutuhan branding bisnis Anda.
+                </p>
+                <span class="price">Mulai Rp 500.000</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Professional Portrait</h3>
+                <p>
+                    Foto profil profesional untuk LinkedIn, CV, website, atau
+                    keperluan branding personal Anda.
+                </p>
+                <span class="price">Mulai Rp 850.000</span>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon"><i class="fa-solid fa-calendar-star"></i></div>
+                <h3>Event Documentation</h3>
+                <p>
+                    Liputan acara korporat, seminar, konser, atau gathering
+                    dengan hasil profesional dan cepat.
+                </p>
+                <span class="price">Mulai Rp 3.000.000</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section" id="portfolio">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="section-eyebrow">Portfolio</div>
+            <h2 class="section-title">Karya <em>Terpilih</em></h2>
+            <p class="section-desc">
+                Kumpulan momen terbaik yang pernah saya abadikan — setiap frame
+                memiliki cerita dan emosinya sendiri.
+            </p>
+        </div>
+
+        <div class="portfolio-filter reveal" id="portfolioFilter">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="wedding">Wedding</button>
+            <button class="filter-btn" data-filter="prewedding">Prewedding</button>
+            <button class="filter-btn" data-filter="wisuda">Wisuda</button>
+            <button class="filter-btn" data-filter="produk">Produk</button>
+            <button class="filter-btn" data-filter="portrait">Portrait</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+            <div class="portfolio-item reveal-scale" data-cat="wedding">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=800&q=80" alt="Wedding">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Wedding</div>
+                    <h4>Cinta Abadi</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="prewedding">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&q=80" alt="Prewedding">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Prewedding</div>
+                    <h4>Golden Hour</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="wisuda">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80" alt="Wisuda">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Wisuda</div>
+                    <h4>Momen Kelulusan</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="produk">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80" alt="Produk">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Produk</div>
+                    <h4>Detail Elegan</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="wedding">
+                <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&q=80" alt="Wedding">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Wedding</div>
+                    <h4>Candid Moment</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="portrait">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80" alt="Portrait">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Portrait</div>
+                    <h4>Urban Character</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="prewedding">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&q=80" alt="Prewedding">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Prewedding</div>
+                    <h4>Sunset Romance</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="wisuda">
+                <img src="https://images.unsplash.com/photo-1627556704290-2b1f5853ff78?w=800&q=80" alt="Wisuda">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Wisuda</div>
+                    <h4>Proud Moment</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="portrait">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&q=80" alt="Portrait">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Portrait</div>
+                    <h4>Natural Beauty</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="produk">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" alt="Produk">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Produk</div>
+                    <h4>Sneaker Commercial</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="wedding">
+                <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80" alt="Wedding">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Wedding</div>
+                    <h4>The First Dance</h4>
+                </div>
+            </div>
+
+            <div class="portfolio-item reveal-scale" data-cat="portrait">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Portrait">
+                <div class="portfolio-overlay">
+                    <span class="view-icon"><i class="fa-solid fa-expand"></i></span>
+                    <div class="cat">Portrait</div>
+                    <h4>Man in Black</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- COUNTERS -->
+<section class="section section--dark">
+    <div class="container">
+        <div class="counters stagger">
+            <div class="counter-item">
+                <div class="counter-num" data-count="12">0</div>
+                <div class="counter-label">Tahun Pengalaman</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num" data-count="850">0</div>
+                <div class="counter-label">Sesi Foto</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num" data-count="420">0</div>
+                <div class="counter-label">Klien Bahagia</div>
+            </div>
+            <div class="counter-item">
+                <div class="counter-num" data-count="18">0</div>
+                <div class="counter-label">Penghargaan</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="section-eyebrow">Cara Kerja</div>
+            <h2 class="section-title">Proses <em>Sederhana</em></h2>
+            <p class="section-desc">
+                Dari konsultasi hingga hasil akhir, semuanya dirancang agar
+                Anda merasa nyaman dan puas.
+            </p>
+        </div>
+
+        <div class="process-grid stagger">
+            <div class="process-step">
+                <div class="process-step-num">01</div>
+                <div class="process-icon"><i class="fa-solid fa-comments"></i></div>
+                <h4>Konsultasi</h4>
+                <p>Diskusi santai untuk memahami kebutuhan, konsep, dan visi Anda.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">02</div>
+                <div class="process-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                <h4>Persiapan</h4>
+                <p>Pemilihan lokasi, jadwal, dan persiapan teknis sebelum sesi.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">03</div>
+                <div class="process-icon"><i class="fa-solid fa-camera"></i></div>
+                <h4>Sesi Foto</h4>
+                <p>Hari H — saya fokus menangkap momen paling jujur dan indah.</p>
+            </div>
+            <div class="process-step">
+                <div class="process-step-num">04</div>
+                <div class="process-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h4>Editing</h4>
+                <p>Proses editing profesional untuk hasil akhir yang memukau.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="container cta-content reveal">
+        <div class="section-eyebrow" style="margin-bottom: 18px;">Siap Mulai?</div>
+        <h2>Mari Abadikan <em>Cerita Anda</em></h2>
+        <p>
+            Setiap momen berharga layak untuk dikenang selamanya.
+            Hubungi saya sekarang dan mari ciptakan kenangan yang tak terlupakan.
+        </p>
+        <a href="#contact" class="btn btn--gold">
+            Booking Sekarang <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section--light" id="testimonials">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="section-eyebrow">Testimoni</div>
+            <h2 class="section-title">Kata <em>Mereka</em></h2>
+            <p class="section-desc">
+                Cerita dari klien yang telah mempercayakan momen berharga mereka kepada saya.
+            </p>
+        </div>
+
+        <div class="testimonials-grid stagger">
+            <div class="testimonial">
+                <div class="testimonial-quote">"</div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    Hasil fotonya luar biasa! Setiap momen tertangkap sempurna.
+                    Pak Dadang sangat profesional, sabar, dan ramah. Highly recommended!
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                        <img src="https://i.pravatar.cc/100?img=47" alt="Rina">
+                    </div>
+                    <div class="testimonial-info">
+                        <strong>Rina &amp; Andi</strong>
+                        <span>Wedding Client</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">"</div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    Pelayanan cepat, hasil memuaskan. Recommended banget buat yang
+                    butuh foto wisuda profesional dengan harga bersahabat.
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                        <img src="https://i.pravatar.cc/100?img=12" alt="Budi">
+                    </div>
+                    <div class="testimonial-info">
+                        <strong>Budi Santoso</strong>
+                        <span>Wisuda Client</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial">
+                <div class="testimonial-quote">"</div>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">
+                    Konsepnya kreatif, hasilnya aesthetic. Terima kasih sudah membuat
+                    momen prewedding kami begitu indah dan berkesan.
+                </p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">
+                        <img src="https://i.pravatar.cc/100?img=32" alt="Sarah">
+                    </div>
+                    <div class="testimonial-info">
+                        <strong>Sarah Wijaya</strong>
+                        <span>Prewedding Client</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INSTAGRAM GRID -->
+<section class="section" style="padding-bottom: 0;">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="section-eyebrow">Instagram</div>
+            <h2 class="section-title">@dadangmulyadi</h2>
+            <p class="section-desc">
+                Ikuti perjalanan saya dan lihat karya-karya terbaru di Instagram.
+            </p>
+        </div>
+    </div>
+
+    <div class="ig-grid">
+        <div class="ig-item">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&q=80" alt="IG">
+            <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+        <div class="ig-item">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=400&q=80" alt="IG">
+            <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+        <div class="ig-item">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=400&q=80" alt="IG">
+            <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+        <div class="ig-item">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&q=80" alt="IG">
+            <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+        <div class="ig-item">
+            <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=400&q=80" alt="IG">
+            <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+        <div class="ig-item">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="IG">
+            <div class="ig-overlay"><i class="fa-brands fa-instagram"></i></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="section-eyebrow">FAQ</div>
+            <h2 class="section-title">Pertanyaan <em>Umum</em></h2>
+            <p class="section-desc">
+                Beberapa pertanyaan yang paling sering ditanyakan klien.
+            </p>
+        </div>
+
+        <div class="faq-list reveal">
+            <div class="faq-item">
+                <button class="faq-question">
+                    Berapa lama proses editing setelah sesi foto?
+                    <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Untuk sesi wisuda dan portrait, hasil editing biasanya selesai dalam 3-5 hari kerja.
+                        Untuk wedding dan event besar, dibutuhkan 7-14 hari kerja tergantung jumlah foto.
+                        Kami juga menyediakan opsi express editing jika Anda membutuhkan hasil lebih cepat.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah bisa request konsep atau lokasi tertentu?
+                    <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Tentu! Justru kami sangat mendorong klien untuk berbagi referensi dan ide.
+                        Kami akan membantu mewujudkan konsep tersebut, atau memberikan saran
+                        alternatif jika diperlukan. Konsultasi konsep gratis untuk semua paket.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Bagaimana sistem pembayarannya?
+                    <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Untuk booking, kami meminta DP sebesar 30% dari total biaya.
+                        Sisanya dibayarkan pada hari H sesi foto atau saat pengambilan hasil.
+                        Pembayaran bisa melalui transfer bank, e-wallet, atau tunai.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Apakah menerima job di luar kota Jakarta?
+                    <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Ya, kami menerima job di seluruh Indonesia. Untuk lokasi di luar Jakarta,
+                        akan ada biaya tambahan untuk transportasi dan akomodasi.
+                        Silakan hubungi kami untuk penawaran khusus.
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    Berapa jumlah foto yang saya dapatkan?
+                    <span class="faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                </button>
+                <div class="faq-answer">
+                    <p>
+                        Jumlah foto bervariasi tergantung paket. Untuk portrait biasanya 30-50 foto,
+                        wedding 300-500 foto, dan event 150-300 foto. Semua foto yang diberikan
+                        sudah melalui proses seleksi dan editing profesional.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section--light" id="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info reveal reveal-left">
+                <div class="section-eyebrow" style="margin-bottom: 18px;">Kontak</div>
+                <h3>Mari <em>Bekerja Sama</em></h3>
+                <p>
+                    Punya pertanyaan, ingin booking sesi, atau sekadar konsultasi?
+                    Kirim pesan dan saya akan merespons dalam 24 jam.
+                </p>
+
+                <div class="contact-list">
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="contact-item-body">
+                            <div class="contact-item-label">Telepon / WhatsApp</div>
+                            <div class="contact-item-value">+62 812-3456-7890</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="contact-item-body">
+                            <div class="contact-item-label">Email</div>
+                            <div class="contact-item-value">hello@dadangmulyadi.com</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="contact-item-body">
+                            <div class="contact-item-label">Studio</div>
+                            <div class="contact-item-value">Jl. Kemang Raya No. 45, Jakarta Selatan</div>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-item-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div class="contact-item-body">
+                            <div class="contact-item-label">Jam Operasional</div>
+                            <div class="contact-item-value">Senin - Sabtu, 09:00 - 18:00 WIB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form reveal reveal-right">
+                <form onsubmit="event.preventDefault(); alert('Terima kasih! Pesan Anda telah terkirim.'); this.reset();">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Nama Lengkap <span class="req">*</span></label>
+                            <input type="text" class="form-control" required placeholder="Nama Anda">
+                        </div>
+                        <div class="form-group">
+                            <label>No. WhatsApp <span class="req">*</span></label>
+                            <input type="tel" class="form-control" required placeholder="08xxxxxxxxxx">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" placeholder="email@anda.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Jenis Layanan <span class="req">*</span></label>
+                            <select class="form-control" required>
+                                <option value="">-- Pilih --</option>
+                                <option>Wedding</option>
+                                <option>Prewedding</option>
+                                <option>Wisuda</option>
+                                <option>Produk</option>
+                                <option>Portrait</option>
+                                <option>Event</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tanggal Sesi (Opsional)</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pesan <span class="req">*</span></label>
+                        <textarea class="form-control" required placeholder="Ceritakan kebutuhan Anda..."></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">
+                        <i class="fa-solid fa-paper-plane"></i> Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>DADANG<span>.</span></h3>
+                <p>
+                    Photographer &amp; visual storyteller yang berbasis di Jakarta.
+                    Mengabadikan momen berharga Anda dengan pendekatan artistik dan profesional.
+                </p>
+                <div class="footer-socials">
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Menu</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="#">Wedding</a></li>
+                    <li><a href="#">Prewedding</a></li>
+                    <li><a href="#">Wisuda</a></li>
+                    <li><a href="#">Produk</a></li>
+                    <li><a href="#">Portrait</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>
+                    Dapatkan tips fotografi dan promo eksklusif langsung ke email Anda.
+                </p>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Terima kasih telah berlangganan!'); this.reset();">
+                    <input type="email" placeholder="Email Anda" required>
+                    <button type="submit" aria-label="Subscribe">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>&copy; <span id="year"></span> Dadang Mulyadi Photography. All rights reserved.</div>
+            <div>
+                Made with <i class="fa-solid fa-heart" style="color: var(--secondary);"></i> in Jakarta
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<button id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<script>
+/* ============================================================
+   1. PRELOADER
+   ============================================================ */
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        document.getElementById('preloader').classList.add('loaded');
+    }, 800);
+});
+
+/* ============================================================
+   2. TAHUN FOOTER
+   ============================================================ */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ============================================================
+   3. NAVBAR SCROLL
+   ============================================================ */
+var navbar = document.getElementById('navbar');
+var backToTop = document.getElementById('backToTop');
+var scrollProgress = document.getElementById('scrollProgress');
+
+function handleScroll() {
+    var y = window.scrollY;
+
+    if (y > 60) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+
+    if (y > 500) backToTop.classList.add('show');
+    else backToTop.classList.remove('show');
+
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = h > 0 ? (y / h) * 100 : 0;
+    scrollProgress.style.width = pct + '%';
+
+    updateActiveNav();
+}
+
+window.addEventListener('scroll', handleScroll, { passive: true });
+
+/* ============================================================
+   4. MOBILE MENU
+   ============================================================ */
+var navToggle = document.getElementById('navToggle');
+var mobileMenu = document.getElementById('mobileMenu');
+var mobileClose = document.getElementById('mobileClose');
+
+navToggle.addEventListener('click', function () {
+    mobileMenu.classList.add('open');
+    document.body.classList.add('no-scroll');
+});
+
+mobileClose.addEventListener('click', function () {
+    mobileMenu.classList.remove('open');
+    document.body.classList.remove('no-scroll');
+});
+
+mobileMenu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+    });
+});
+
+/* ============================================================
+   5. SMOOTH SCROLL
+   ============================================================ */
+document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener('click', function (e) {
+        var targetId = this.getAttribute('href');
+        if (targetId === '#' || targetId === '') return;
+
+        var target = document.querySelector(targetId);
+        if (!target) return;
+
+        e.preventDefault();
+        var navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 80;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - navH + 10;
+
+        window.scrollTo({ top: top, behavior: 'smooth' });
+    });
+});
+
+/* ============================================================
+   6. UPDATE ACTIVE NAV
+   ============================================================ */
+function updateActiveNav() {
+    var sections = document.querySelectorAll('section[id]');
+    var links = document.querySelectorAll('.nav-link');
+    var pos = window.scrollY + 160;
+
+    sections.forEach(function (sec) {
+        var top = sec.offsetTop;
+        var bottom = top + sec.offsetHeight;
+        var id = sec.getAttribute('id');
+
+        if (pos >= top && pos < bottom) {
+            links.forEach(function (link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+/* ============================================================
+   7. SCROLL REVEAL
+   ============================================================ */
+var revealObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -60px 0px'
+});
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger').forEach(function (el) {
+    revealObserver.observe(el);
+});
+
+/* ============================================================
+   8. COUNTER ANIMATION
+   ============================================================ */
+function animateCounter(el) {
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var duration = 2000;
+    var startTime = null;
+
+    function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target);
+
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            el.textContent = target + '+';
+        }
+    }
+
+    requestAnimationFrame(step);
+}
+
+var counterObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            animateCounter(entry.target);
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(function (el) {
+    counterObserver.observe(el);
+});
+
+/* ============================================================
+   9. SKILL BAR
+   ============================================================ */
+var skillObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            var bar = entry.target;
+            var width = bar.getAttribute('data-width');
+            setTimeout(function () {
+                bar.style.width = width + '%';
+            }, 200);
+            skillObserver.unobserve(bar);
+        }
+    });
+}, { threshold: 0.3 });
+
+document.querySelectorAll('.skill-bar-fill').forEach(function (bar) {
+    skillObserver.observe(bar);
+});
+
+/* ============================================================
+   10. PORTFOLIO FILTER
+   ============================================================ */
+var filterBtns = document.querySelectorAll('.filter-btn');
+var portfolioItems = document.querySelectorAll('.portfolio-item');
+
+filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        filterBtns.forEach(function (b) { b.classList.remove('active'); });
+        this.classList.add('active');
+
+        var filter = this.getAttribute('data-filter');
+
+        portfolioItems.forEach(function (item) {
+            var cat = item.getAttribute('data-cat');
+
+            if (filter === 'all' || cat === filter) {
+                item.classList.remove('hide');
+                item.style.opacity = '0';
+                item.style.transform = 'scale(0.9)';
+                setTimeout(function () {
+                    item.style.opacity = '1';
+                    item.style.transform = 'scale(1)';
+                }, 30);
+            } else {
+                item.classList.add('hide');
+            }
+        });
+    });
+});
+
+/* ============================================================
+   11. FAQ ACCORDION
+   ============================================================ */
+document.querySelectorAll('.faq-question').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+        var item = this.parentElement;
+        var answer = this.nextElementSibling;
+        var isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(function (i) {
+            i.classList.remove('open');
+            i.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        if (!isOpen) {
+            item.classList.add('open');
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+    });
+});
+
+/* ============================================================
+   12. BACK TO TOP
+   ============================================================ */
+backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ============================================================
+   13. HERO PARALLAX (subtle)
+   ============================================================ */
+var heroBg = document.querySelector('.hero-bg');
+if (heroBg && window.innerWidth > 768) {
+    window.addEventListener('scroll', function () {
+        var y = window.scrollY;
+        if (y < window.innerHeight) {
+            heroBg.style.transform = 'translateY(' + (y * 0.3) + 'px) scale(1.05)';
+        }
+    }, { passive: true });
+}
+
+/* ============================================================
+   14. INIT
+   ============================================================ */
+window.addEventListener('load', handleScroll);
+
+/* ============================================================
+   15. KEYBOARD
+   ============================================================ */
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        mobileMenu.classList.remove('open');
+        document.body.classList.remove('no-scroll');
+    }
+});
+</script>
+
+</body>
+</html>
